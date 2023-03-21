@@ -4,3 +4,9 @@ Sourced from Feryon Workshops, this is a multi-component Spin app that mimics a 
 * KV Explorer (persisting Questions and Answers)
 * Fileserver (serving frontend content)
 
+Get started with . . . 
+
+`spin build`
+
+`spin deploy`
+
