@@ -1,0 +1,31 @@
+spin_manifest_version = "1"
+authors = ["mackenzieolson"]
+description = ""
+name = "kenzie-magic-8"
+trigger = { type = "http", base = "/" }
+version = "0.1.1"
+
+[[component]]
+id = "magic-8-ball"
+source = "target/spin-http-js.wasm"
+exclude_files = ["**/node_modules"]
+key_value_stores = ["default"]
+[component.trigger]
+route = "/magic-8"
+[component.build]
+command = "npm run build"
+
+[[component]]
+source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.0.1/spin_static_fs.wasm", digest = "sha256:650376c33a0756b1a52cad7ca670f1126391b79050df0321407da9c741d32375" }
+id = "fileserver"
+files = [ { source = "frontend/", destination = "/" } ]
+[component.trigger]
+route = "/..."
+
+[[component]]
+source = { url = "https://github.com/radu-matei/spin-kv-explorer/releases/download/v0.6.0/spin-kv-explorer.wasm", digest = "sha256:38110bc277a393cdfb1a885a0fd56923d47314b2086399d1e3bbcb6daa1f04ad" }
+id = "kv-explorer"
+# add or remove stores you want to explore here
+key_value_stores = ["default"]
+[component.trigger]
+route = "/internal/kv-explorer/..."
