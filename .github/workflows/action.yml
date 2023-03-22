@@ -20,4 +20,4 @@ jobs:
         uses: fermyon/actions/spin/deploy@v1
         with:
           manifest_file: spin.toml
-          fermyon_token: ${{ secrets.FERMYON_CLOUD_TOKEN }}
+          fermyon_token: ${{ secrets.FERMYON_TOKEN }}
