@@ -34,7 +34,8 @@ function answer(): string {
     'Ask again later.',
     'Absolutely!',
     'Unlikely',
-    'Simply put, no'
+    'Simply put, no',
+    'The answer is unclear'
   ];
   let idx = Math.floor(Math.random() * answers.length);
   return answers[idx];
